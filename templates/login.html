@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+        <h1 class="text-center">Войти в профиль</h1>
+        <br>
+        <form method="post">
+            <div class="form-group">
+                <label for="" class="text-center">Имя пользователя</label>
+                <input type="text" class="form-control" placeholder="имя пользователя" name="username">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Пароль</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="пароль" name="password">
+            </div>
+            <br>
+            {% if message %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary center-block">войти</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

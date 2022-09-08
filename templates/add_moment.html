@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <form class="" method="post" enctype="multipart/form-data">
+        <img src="" alt="">
+        <div class="mb-3">
+          <label for="formFile" class="form-label">Загрузить фото</label>
+          <input class="form-control" type="file" id="formFile" name="image">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Example textarea</label>
+            <textarea class="form-control" rows="3" name="description"></textarea>
+        </div>
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary center-block">Изменить</button>
+        </div>
+    </form>
+</div>
+{% endblock %}

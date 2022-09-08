@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    {% if current_user.is_authenticated %}
+        <div class="card">
+                <div class="card-body">
+                  <div class="d-flex flex-column align-items-center text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                    <div class="mt-3">
+                      <h4>{{ current_user.first_name }} {{ current_user.second_name }}</h4>
+                      <p class="text-secondary mb-1">{{ current_user.city }}</p>
+                      <p class="text-muted font-size-sm">{{ current_user.description }}</p>
+                      <button class="btn btn-primary">подписаться</button>
+                      <button class="btn btn-outline-primary mr-3">оставить момент</button>
+                      <a href="/edit_profile"><img src="static/img/pencil.svg" alt=""></a>
+                    </div>
+                  </div>
+        </div>
+        <br class="mt-3">
+        <div class="row">
+            <div class="col-md">
+                <div class="card">
+                  <img src="static/img/test.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                  </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                  <img src="static/img/test.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                  </div>
+                </div>
+                <br>
+            </div>
+            <div class="col-md">
+                <div class="card">
+                  <img src="static/img/test.jpg" class="card-img-top" alt="...">
+                  <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="#" class="btn btn-primary">Перейти куда-нибудь</a>
+                  </div>
+                </div>
+                <br>
+            </div>
+        </div>
+    </div>
+    {% else %}
+        <div class="d-flex flex-column align-items-center text-center">
+            <h1>Войди в профиль или зарегайся</h1>
+            <div class="mt-3">
+                <a href="/login" class="btn btn-primary">Войти</a>
+                <a href="/registration" class="btn btn-primary">Зарегистрироваться</a>
+            </div>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}

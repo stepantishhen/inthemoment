@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+        <h1 class="text-center">Регистрация</h1>
+        <br>
+        <form class="" method="post">
+            <div class="form-group">
+                <label for="" class="text-center">Имя</label>
+                <input type="text" class="form-control" placeholder="имя" name="first_name">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="" class="text-center">Фамилия</label>
+                <input type="text" class="form-control" placeholder="фамилия" name="second_name">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="" class="text-center">Электронная почта</label>
+                <input type="email" class="form-control" placeholder="электронная почта" name="email">
+                <div class="form-text">отправит вам письмо для подтверждения</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="" class="text-center">Имя пользователя</label>
+                <input type="text" class="form-control" placeholder="имя пользователя" name="username">
+                <div class="form-text">любое не занятое имя латиницей</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Пароль</label>
+                <input type="password" class="form-control" placeholder="пароль" name="password">
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="">Пароль ещё раз</label>
+                <input type="password" class="form-control" placeholder="пароль ещё раз" name="check_password">
+                <div class="form-text">повторите придуманный пароль</div>
+            </div>
+            <br>
+            {% if message %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary center-block">Зарегистрироваться</button>
+            </div>
+        </form>
+    </div>
+<br>
+{% endblock %}

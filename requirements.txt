@@ -1,0 +1,6 @@
+flask~=2.0.1
+sqlalchemy~=1.4.21
+sqlalchemy-serializer
+flask-ngrok
+flask_login
+Werkzeug~=2.0.1

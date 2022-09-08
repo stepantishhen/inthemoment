@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+        <h1 class="text-center">Редактировать профиль</h1>
+        <br>
+        <form class="" method="post">
+            <div class="form-group">
+                <label class="text-center">Имя</label>
+                <input type="text" class="form-control" placeholder="имя" name="first_name" value="{{ current_user.first_name }}">
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="text-center">Фамилия</label>
+                <input type="text" class="form-control" placeholder="фамилия" name="second_name" value="{{ current_user.second_name }}">
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="text-center">Электронная почта</label>
+                <input type="email" class="form-control" placeholder="электронная почта" name="email" value="{{ current_user.email }}">
+                <div class="form-text">отправит вам письмо для подтверждения</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="text-center">Имя пользователя</label>
+                <input type="text" class="form-control" placeholder="имя пользователя" name="username" value="{{ current_user.username }}">
+                <div class="form-text">любое не занятое имя латиницей</div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="text-center">Город</label>
+                <input type="text" class="form-control" placeholder="город" name="city" value="{{ current_user.city }}">
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="text-center">Описание</label>
+                <input type="text" class="form-control" placeholder="описание" name="description" value="{{ current_user.description }}">
+            </div>
+            <br>
+            <div class="form-group">
+                <label class="text-center">Фото профиля</label>
+                <input type="file" class="form-control" placeholder="файл" name="file">
+            </div>
+            <br>
+            {% if message %}
+            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endif %}
+            <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary center-block">Изменить</button>
+            </div>
+        </form>
+    </div>
+<br>
+{% endblock %}
